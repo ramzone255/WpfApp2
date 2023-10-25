@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        MouseDown="Window_moving">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="403"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1">
+            <Frame x:Name="MainFrame" Source=".\resourses\pages\StartPage.xaml" NavigationUIVisibility="Hidden" 
+                   VerticalAlignment="Top"/>
+        </Border>
+        <StackPanel Grid.Row="0" Background="RosyBrown">
+            <TextBlock Height="70"
+                       Width="400"
+                       Text="AutoChess"
+                       FontSize="55"
+                       Foreground="AliceBlue"
+                       FontWeight="Heavy"
+                       FontStyle="Italic"
+                       TextAlignment="Center"
+                       Margin="0,-17,00,0"/>
+            <Button Height="45" Width="45" Margin="650,-65,-100,0" Background="RosyBrown" Style="{StaticResource RoundButtonTemplate}" Click="Close_Click">
+                <Image Source="/Resourses/Image/close.png" Height="45" Width="45"/>
+                <Button.ToolTip>
+                    <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate2}">
+                        ㅤㅤЗакрытьㅤㅤ
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Height="45" Width="45" Margin="570,-62,-100,0" Background="RosyBrown" Style="{StaticResource RoundButtonTemplate}" Click="RollUp_Click">
+                <Image Source="/Resourses/Image/RollUp.png" Height="32" Width="32"/>
+                <Button.ToolTip>
+                    <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate2}">
+                        ㅤㅤСвернутьㅤㅤ
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Image Source="/Resourses/Image/chess (2).png" Height="45" Width="45" Margin="0,-60,650,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

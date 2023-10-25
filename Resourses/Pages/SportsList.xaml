@@ -1,0 +1,222 @@
+﻿<Page x:Class="WpfApp2.Resourses.Pages.SportsList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.Resourses.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="403" d:DesignWidth="800"
+      Title="SportsList">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Height="403" Margin="0,0,0,0" Width="680" Grid.Column="0" Background="WhiteSmoke">
+            <TextBlock Height="30" Text="Sportsmans" TextAlignment="Center" FontSize="25" Foreground="Black" FontWeight="Medium" FontStyle="Italic"/>
+            <ListView Name="LViewSport" Width="630" Height="280" Margin="0,20,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="630" Height="80">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="85"/>
+                                <ColumnDefinition Width="115"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="115"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="65"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Width="60" Height="60"
+                       Grid.Column="7"
+                       Stretch="UniformToFill"
+                       HorizontalAlignment="Left"
+                       Margin="5">
+                                <Image.Source>
+                                    <Binding Path="photo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>\Resourses\Image\Incognito.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                            <TextBlock Grid.Column="0"
+                           Text="{Binding ID}"
+                           FontSize="16"
+                             Margin="5"/>
+                            <TextBlock  Grid.Column="1"
+                             FontSize="16"
+                             Margin="5"
+                           Text="{Binding Name}"/>
+                            <TextBlock  Grid.Column="2"
+                             FontSize="16"
+                             Margin="5"
+                           Text="{Binding Birth}"/>
+                            <TextBlock  Grid.Column="3"
+                           Text="{Binding Category}"
+                           FontSize="16"
+                             Margin="5"/>
+                            <TextBlock Grid.Column="4"
+                           Text="{Binding Place}"
+                           FontSize="16"
+                             Margin="5"/>
+                            <TextBlock Grid.Column="5"
+                           Text="{Binding Ivent.Name}"
+                           FontSize="16"
+                             Margin="5"/>
+                            <TextBlock Grid.Column="6"
+                           Text="{Binding State.Name}"
+                           FontSize="16"
+                             Margin="5"/>
+                            <Button Style="{StaticResource RoundButtonTemplate2}"
+                    Height="20" Width="65"
+                                    Grid.Column="8"
+                    Content="Изменить"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    HorizontalAlignment="Left"
+                    Margin="0,0,0,0" Click="ReAdd_Click"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Style="{StaticResource RoundButtonTemplate2}"
+                    Height="30" Width="80"
+                    Content="Ivents"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="0,20,500,0" Click="Start_Click"/>
+            <Button Style="{StaticResource RoundButtonTemplate2}"
+                    Height="30" Width="80"
+                    Content="Sportsmans"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="0,-30,300,0" Click="Sport_Click"/>
+            <Button Style="{StaticResource RoundButtonTemplate2}"
+                    Height="30" Width="80"
+                    Content="SportsList"
+                    Background="LightGray"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="0,-30,100,0" Click="SportList_Click"/>
+            <Button Style="{StaticResource RoundButtonTemplate}"
+                    Height="64" Width="64"
+                    Background="WhiteSmoke"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="100,-45,00,0" Click="Excel_Click">
+                <Image Source="/Resourses/Image/icons8-excel-64.png" />
+                <Button.ToolTip>
+                    <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                        ㅤㅤПерейти в Excelㅤㅤ
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource RoundButtonTemplate}"
+                    Height="64" Width="64"
+                    Background="WhiteSmoke"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="250,-65,00,0" Click="Word_Click">
+                <Image Source="/Resourses/Image/icons8-word-64.png" />
+                <Button.ToolTip>
+                    <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                        ㅤㅤПерейти в Wordㅤㅤ
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource RoundButtonTemplate}"
+                    Height="64" Width="64"
+                    Background="WhiteSmoke"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="400,-65,00,0" Click="PDF_Click">
+                <Image Source="/Resourses/Image/icons8-pdf-64.png" />
+                <Button.ToolTip>
+                    <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                        ㅤㅤПерейти в PDFㅤㅤ
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource RoundButtonTemplate}"
+                    Height="64" Width="64"
+                    Background="WhiteSmoke"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="550,-65,00,0" Click="Printer_Click">
+                <Image Source="/Resourses/Image/icons8-printer-64.png" />
+                <Button.ToolTip>
+                    <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                        ㅤㅤПерейти в печатьㅤㅤ
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Background="WhiteSmoke" Orientation="Horizontal">
+            <Border Height="403" Width="120" BorderThickness="2" BorderBrush="LightGray">
+                <StackPanel Height="403" Width="120" Background="WhiteSmoke">
+                    <Button Style="{StaticResource RoundButtonTemplate2}"
+                    Height="40" Width="100"
+                    Content="Подробнее"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="0,20,3,300" Click="Web_Click">
+                        <Button.ToolTip>
+                            <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                                ㅤОткрывает рейтинг спортсметов по версии ФИДЕㅤ
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Image Source="/Resourses/Image/serch.png" Height="64" Width="64" Margin="0,-500,0,0"/>
+                    <TextBox x:Name="TbSerch" Height="30" FontSize="20" Width="100" BorderThickness="2" BorderBrush="Black" Margin="0,-380,3,0" TextChanged="TbSerch_TextChanged">
+                        <TextBox.ToolTip>
+                            <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                                ㅤПоискㅤ
+                            </ToolTip>
+                        </TextBox.ToolTip>
+                    </TextBox>
+                    <Image Source="/Resourses/Image/filter.png" Height="64" Width="64" Margin="0,-280,0,0"/>
+                    <ComboBox Height="30" Width="100" BorderThickness="2" BorderBrush="Black" x:Name="CmbFilterCategory" Margin="0,-180,0,0" SelectionChanged="CmbFilterCategory_SelectionChanged">
+                        <ComboBox.ToolTip>
+                            <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                                ㅤФильтр категорииㅤ
+                            </ToolTip>
+                        </ComboBox.ToolTip>
+                    </ComboBox>
+                    <ComboBox Height="30" Width="100" BorderThickness="2" BorderBrush="Black" x:Name="CmbFilterState" Margin="0,-100,0,0" SelectionChanged="CmbFilterState_SelectionChanged">
+                        <ComboBox.ToolTip>
+                            <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                                ㅤФильтр занятого спортсменом местаㅤ
+                            </ToolTip>
+                        </ComboBox.ToolTip>
+                    </ComboBox>
+                    <Button Height="40" Width="100" Style="{StaticResource RoundButtonTemplate2}"
+                    Content="Очистить"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="0,-30,3,0" Click="Clear_Click">
+                        <Button.ToolTip>
+                            <ToolTip Height="30" Style="{StaticResource RoundToolsTemplate}">
+                                ㅤОчищает фильтрыㅤ
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

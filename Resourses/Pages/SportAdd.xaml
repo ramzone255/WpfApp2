@@ -1,0 +1,46 @@
+﻿<Page x:Class="WpfApp2.Resourses.Pages.SportAdd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.Resourses.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="403" d:DesignWidth="800"
+      Title="SportAdd">
+
+    <Grid Background="WhiteSmoke">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Height="403" Width="420">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,50,0,0">
+                <TextBlock Text="Имя спортсмена" Margin="5" FontSize="20"/>
+                <TextBox Text="{Binding Name}"  Name="TxtName" Margin="5" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Дата рождения" Margin="5" FontSize="20"/>
+                <TextBox Text="{Binding Birth}"  Name="TxtDateBirth" Margin="5" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Категория" Margin="5" FontSize="20"/>
+                <TextBox Text="{Binding Category}" Name="TxtCategory" Margin="5" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Место" Margin="5" FontSize="20"/>
+                <TextBox Text="{Binding Place}" Name="TxtPlace" Margin="5" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Турнир" Margin="5" FontSize="20"/>
+                <ComboBox SelectedValue="{Binding Id_ivent}" Height="30" Width="100" BorderThickness="2" BorderBrush="Black" x:Name="CmbIvent" Margin="0,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Страна" Margin="5" FontSize="20"/>
+                <ComboBox SelectedValue="{Binding Id_state}" Height="30" Width="100" BorderThickness="2" BorderBrush="Black" x:Name="CmbState" Margin="0,0,0,0"/>
+            </StackPanel>
+            <Button Style="{StaticResource RoundButtonTemplate2}"
+                    Height="40" Width="100"
+                    Content="Добавить"
+                    Foreground="Black" 
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="0,40,0,0" Click="Button_Click1"/>
+        </StackPanel>
+    </Grid>
+</Page>
